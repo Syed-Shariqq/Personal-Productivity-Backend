@@ -1,0 +1,94 @@
+# Spring Boot & Maven
+target/
+.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# IDE - IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# IDE - VS Code
+.vscode/
+*.code-workspace
+
+# IDE - STS (Spring Tool Suite)
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+# IDE - NetBeans
+/nbproject/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Application config (with sensitive data)
+application.properties
+application.yml
+application-*.properties
+application-*.yml
+
+# Environment variables
+.env
+.env.local
+
+# Logs
+logs/
+*.log
+*.log.*
+
+# Uploads folder
+uploads/
+
+# Database
+*.db
+*.h2.db
+
+# Compiled files
+*.class
+*.jar
+*.war
+*.ear
+
+# Maven
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+
+# Gradle
+.gradle
+build/
+
+# JUnit
+junit.log
+
+# SonarQube
+.sonarqube/
+
+# Code coverage
+coverage/
+*.coverage
+
+# Node (if frontend tools are used)
+node_modules/
+package-lock.json
+
+# Temp files
+*.tmp
+*.bak
+*~
