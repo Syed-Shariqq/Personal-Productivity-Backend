@@ -11,7 +11,7 @@ A Spring Boot backend for a single-user personal document & productivity managem
 - **QR Code Generation**: Generate QR codes for sharing and tracking
 - **PDF Processing**: Convert documents to PDF format
 - **Search History**: Track and retrieve search history
-- **Authentication**: JWT-based authentication for secure access
+- **Authentication**: Spring Security Basic Authentication
 - **CORS Support**: Configured for single-user access with proper security headers
 
 ## 🛠 Tech Stack
@@ -20,7 +20,7 @@ A Spring Boot backend for a single-user personal document & productivity managem
 - **Language**: Java 17+
 - **Database**: MySQL 8.0+
 - **ORM**: Spring Data JPA (Hibernate)
-- **Security**: Spring Security + JWT (JSON Web Tokens)
+- **Security**: Spring Security (HTTP Basic) for single-user access
 - **Build Tool**: Maven
 - **API Documentation**: Swagger/Springdoc-OpenAPI (if configured)
 
@@ -92,10 +92,11 @@ src/main/java/com/example/demo/
 
 3. **Configure application settings**
    - Update any additional settings in `application.properties`:
-     - JWT secret key
+     - Basic authentication credentials
      - Email scheduler settings
      - Upload directory path
      - Other business logic configurations
+
 
 4. **Build the project**
    ```bash
@@ -126,9 +127,9 @@ spring.datasource.password=your_password
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=false
 
-# JWT Configuration
-jwt.secret=your_secret_key_here_min_32_characters_long
-jwt.expiration=86400000
+# Security (Basic Auth)
+spring.security.user.name=your_username
+spring.security.user.password=your_password
 
 # Email Configuration (if using Email Scheduler)
 spring.mail.host=smtp.gmail.com
@@ -155,7 +156,7 @@ file.upload.dir=./uploads
 ### Best Practices
 
 1. **Environment Variables**: Store sensitive data (database credentials, JWT secrets, API keys) in environment variables or `.env` file, NOT in version control
-2. **JWT Token**: Use a strong, randomly generated secret key for JWT signing
+2. **Basic Authentication**: Use strong credentials and restrict access to trusted clients
 3. **CORS**: Verify CORS configuration allows only trusted origins
 4. **Input Validation**: Ensure all user inputs are validated and sanitized
 5. **File Upload Validation**: Validate file types and sizes in the MediaService
@@ -166,7 +167,7 @@ file.upload.dir=./uploads
 
 The application provides REST endpoints for:
 
-- `/api/auth/**` - Authentication
+- Authentication handled via HTTP Basic Auth (Spring Security)
 - `/api/notes/**` - Note management
 - `/api/folders/**` - Folder management
 - `/api/media/**` - Media upload/download
