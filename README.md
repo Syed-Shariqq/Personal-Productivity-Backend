@@ -212,6 +212,11 @@ This generates a JAR file in the `target/` directory ready for deployment.
    - Check disk space availability
    - Verify file size limits in Spring configuration
 
+   ## 🔮 Future Improvements
+- Migrate authentication from Basic Auth to JWT
+- Add multi-user support and role-based authorization
+
+
 ## 📄 License
 
 This project is private and intended for personal use.
