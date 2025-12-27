@@ -155,7 +155,7 @@ file.upload.dir=./uploads
 
 ### Best Practices
 
-1. **Environment Variables**: Store sensitive data (database credentials, JWT secrets, API keys) in environment variables or `.env` file, NOT in version control
+1. **Environment Variables**: Store sensitive data (database credentials, API keys) in environment variables or `.env` file, NOT in version control
 2. **Basic Authentication**: Use strong credentials and restrict access to trusted clients
 3. **CORS**: Verify CORS configuration allows only trusted origins
 4. **Input Validation**: Ensure all user inputs are validated and sanitized
